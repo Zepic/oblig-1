@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>QUnit Example</title>
+    <link rel="stylesheet" href="https://code.jquery.com/qunit/qunit-2.9.2.css">
+</head>
+<body>
+    <div id="qunit"></div>
+    <div id="qunit-fixture"></div>
+    <script src="https://code.jquery.com/qunit/qunit-2.9.2.js"></script>
+    <script src="Test.js"></script>
+    <script>
+        //test 1
+
+        QUnit.test("10Numbers - '12.03.2010'", function (assert) {
+            const actual = isDateValid('12.03.2010');
+            const expected = true;
+            assert.equal(actual, expected);
+        });
+
+        QUnit.test("Valid punctuation - '11.03.2010'", function (assert) {
+            const actual = isDateValid('12.03.2010');
+            const expected = true;
+            assert.equal(actual, expected);
+        });
+
+         QUnit.test("Year Valid - '12.03.2077'", function (assert) {
+            const actual = isDateValid('12.03.2077');
+            const expected = true;
+            assert.equal(actual, expected);
+        });
+         
+         QUnit.test("Month Valid - '12.03.2010'", function (assert) {
+            const actual = isDateValid('12.03.2010');
+            const expected = true;
+            assert.equal(actual, expected);
+        });
+        
+         QUnit.test("Leap Year true - '29.02.2020'", function (assert) {
+            const actual = isDateValid('29.02.2020');
+            const expected = true;
+            assert.equal(actual, expected);
+        });
+
+        QUnit.test("Leap Year false - '29.02.2019'", function (assert) {
+            const actual = isDateValid('29.02.2019');
+            const expected = false;
+            assert.equal(actual, expected);
+        });
+
+        QUnit.test("Day Valid - '30.03.2010'", function (assert) {
+            const actual = isDateValid('30.03.2010');
+            const expected = true;
+            assert.equal(actual, expected);
+        });
+
+        QUnit.test("Day false  - '31.11.2019'", function (assert) {
+            const actual = isDateValid('31.11.2019');
+            const expected = false;
+            assert.equal(actual, expected);
+        });
+
+        QUnit.test("Day 29 true - '30.03.2010'", function (assert) {
+            const actual = isDateValid('30.03.2010');
+            const expected = true;
+            assert.equal(actual, expected);
+        });
+
+        QUnit.test("Day 29 false - '29.02.2010'", function (assert) {
+            const actual = isDateValid('29.02.2010');
+            const expected = false;
+            assert.equal(actual, expected);
+        });
+
+      QUnit.test("Day 30 true - '30.03.2010'", function (assert) {
+            const actual = isDateValid('30.03.2010');
+            const expected = true;
+            assert.equal(actual, expected);
+        });
+
+        QUnit.test("Day 30 false - '30.02.3451'", function (assert) {
+            const actual = isDateValid('30.02.3451');
+            const expected = false;
+            assert.equal(actual, expected);
+        });
+        
+        QUnit.test("Day 31 true - '31.03.2010'", function (assert) {
+            const actual = isDateValid('31.03.2010');
+            const expected = true;
+            assert.equal(actual, expected);
+        });
+
+        QUnit.test("Day 31 false - '31.04.1998'", function (assert) {
+            const actual = isDateValid('31.04.1998');
+            const expected = false;
+            assert.equal(actual, expected);
+        });
+
+
+
+
+
+    </script>
+</body>
+</html>
